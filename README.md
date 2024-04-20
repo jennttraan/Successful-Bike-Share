@@ -39,4 +39,4 @@ Business Task In order to maximize the number of annual membership, I,the data a
 
 <b>About the data set:</b>
 
-Since Cyclistic is a fictional company, I will use Divvy’s, a bike-share program based in Chicago, data from May 2020 – April 2021 to complete this case study. 
+Since Cyclistic is a fictional company, I will use Divvy’s, a bike-share program based in Chicago, data from May 2020 – April 2021 to complete this case study. For the dataset plase click <a href="http://divvy-tripdata.s3.amazonaws.com/index.html">here</a>.
