@@ -33,9 +33,10 @@ A summary of my analysis
 
 Supporting visualizations and key findings
 
-<b>Ask</b>
 
-Business Task In order to maximize the number of annual membership, I,the data analyst, will find trends and patterns among casual riders and membership riders, and identify potential riders who benefit from annual membership.
+<b>Business Task </b>
+
+In order to maximize the number of annual membership, I,the data analyst, will find trends and patterns among casual riders and membership riders, and identify potential riders who benefit from annual membership.
 
 <b>About the data set:</b>
 
