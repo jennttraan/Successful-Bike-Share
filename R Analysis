@@ -616,7 +616,7 @@ summary(all_trips_v3)
                                        3rd Qu.: 937.0   3rd Qu.: 2557.1  
                                        Max.   :1440.0   Max.   :25218.9  
 
-<br>Analyze</br>
+Analyze
 Firstly, calculate the number of rides by type of rider.
 
 #Assign the correct order to each day of the week
@@ -734,7 +734,7 @@ member	03	586.2971
 casual	04	714.3100
 member	04	598.1330
 
-<b>Findings:</b>
+Findings:
 
 Membership rider's trip is longer than casual ones regardless of the season or day.
 All users take longer trips over weekend and summertime.
@@ -819,7 +819,7 @@ Finding:
 
 6% of casual riders return their bike to their start point station, 4% of membership rider returns at their start point station.
 
-<b>Share</b>
+Share
 Here are visualizations which would allow executives to understand my conclusion easily.
 
 all_trips_v3 %>%
@@ -869,14 +869,13 @@ all_trips_v3 %>%
     geom_bar(position = "dodge", stat = "identity")
 
 
-<b>Analysis:</b>
+Analysis
 
 Casual users travel the same average distance than members, but they have relatively longer rides, that would indicate a more leisure oriented usage vs a more "public transport" or pragmatic use of the bikes by the annual members.
 Casual riders are more likely to return their bikes at the same station.
 Additionally, membership riders are more active on weekday, casual riders use the service more often over weekend. It lead me to conclude that membership riders use this service for their commute while casual rider use it for fun.
 
-<b>Conclusion:</b>
-
+Conclusion:
 1)The Casual users have leisure, and tourism rides mostly on weekends.
 
 2)The Annual users have commute or pragmatic rides during weekdays.
