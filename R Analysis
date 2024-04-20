@@ -615,8 +615,9 @@ summary(all_trips_v3)
                                        Mean   : 669.3   Mean   : 1855.0  
                                        3rd Qu.: 937.0   3rd Qu.: 2557.1  
                                        Max.   :1440.0   Max.   :25218.9  
-Analyze
-Firstly, let's find out the number of ride by type of rider.
+
+<br>Analyze</br>
+Firstly, calculate the number of rides by type of rider.
 
 #Assign the correct order to each day of the week
 all_trips_v3$day_of_week <- 
@@ -676,11 +677,12 @@ casual	03	50422
 member	03	123872
 casual	04	83778
 member	04	170431
-Findings:
 
-Casual riders are more likely to take a ride on weekend while membership riders use on weekday more often.
-Summer is the peak season for both rider types
-Now, I would like to find out whether ride_length can be different depends on rider type.
+<b>Findings:</b>
+
+Casual riders are more likely to take a ride on weekend while membership riders ride more on the weekday.
+Summer is the peak season for both rider types.
+Now, I would like to find out whether ride_length can be different depending on rider type.
 
 aggregate(all_trips_v3$ride_length ~ all_trips_v3$member_casual + all_trips_v3$day_of_week, FUN=mean)
 A data.frame: 14 × 3
@@ -731,11 +733,12 @@ casual	03	720.8427
 member	03	586.2971
 casual	04	714.3100
 member	04	598.1330
-Findings:
 
-Membership rider's trip is longer than casual ones regardless of the season or day
-All users take longer trips over weekend and summer
-Next, check whether how each type of rider use the bike by looking at ride distance.
+<b>Findings:</b>
+
+Membership rider's trip is longer than casual ones regardless of the season or day.
+All users take longer trips over weekend and summertime.
+Next, I'll check whether how each type of rider use the bike by looking at ride distance.
 
 all_trips_v3 %>%
     group_by(member_casual, day_of_week) %>%
@@ -814,10 +817,10 @@ casual	58284
 member	72786
 Finding:
 
-While 6% of casual riders return their bike to their start point station, 4% of membership rider returns at their start point station.
+6% of casual riders return their bike to their start point station, 4% of membership rider returns at their start point station.
 
-Share
-Here, I would like to share visualizations which would allow executives to understand my conclusion easily.
+<b>Share</b>
+Here are visualizations which would allow executives to understand my conclusion easily.
 
 all_trips_v3 %>%
     group_by(member_casual, day_of_week) %>%
@@ -866,14 +869,17 @@ all_trips_v3 %>%
     geom_bar(position = "dodge", stat = "identity")
 
 
-Analysis:
+<b>Analysis:</b>
 
-It seems that the casual users travel the same average distance than the member users, but they have relatively longer rides, that would indicate a more leisure oriented usage vs a more "public transport" or pragmatic use of the bikes by the annual members.
+Casual users travel the same average distance than members, but they have relatively longer rides, that would indicate a more leisure oriented usage vs a more "public transport" or pragmatic use of the bikes by the annual members.
 Casual riders are more likely to return their bikes at the same station.
-Additionaly, while that membership riders are more active on weekday, casual riders use the service more often over weekend. It lead me to conclude that membership riders use this service for their commute while casual rider use it for fun.
-linkcode
-Conclusion:
+Additionally, membership riders are more active on weekday, casual riders use the service more often over weekend. It lead me to conclude that membership riders use this service for their commute while casual rider use it for fun.
+
+<b>Conclusion:</b>
 
 1)The Casual users have leisure, and tourism rides mostly on weekends.
 
 2)The Annual users have commute or pragmatic rides during weekdays.
+
+
+
