@@ -1,5 +1,5 @@
 
-<size=16><b>Performed data analysis for a fictional bike share company.</size>
+<b>Performed data analysis for a fictional bike share company.
 
 <u>Background scenario</u></b>
 
