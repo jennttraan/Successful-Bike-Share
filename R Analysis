@@ -255,10 +255,7 @@ tripdata_2020_10 <-  mutate(tripdata_2020_10, start_station_id = as.character(st
 tripdata_2020_11 <-  mutate(tripdata_2020_11, start_station_id = as.character(start_station_id), end_station_id = as.character(end_station_id))
 #Combine all the data sets
 all_trips <- bind_rows(tripdata_2020_05, tripdata_2020_06, tripdata_2020_07, tripdata_2020_08, tripdata_2020_09, tripdata_2020_10, tripdata_2020_11, tripdata_2020_12, tripdata_2021_01, tripdata_2021_02, tripdata_2021_03, tripdata_2021_04)
-Process
-Data Cleaning before conducting analysis
 
-Due to the large data set, I will use R for data cleaning and data analysis.
 
 colnames(all_trips)  #List of column names
 'ride_id''rideable_type''started_at''ended_at''start_station_name''start_station_id''end_station_name''end_station_id''start_lat''start_lng''end_lat''end_lng''member_casual'
@@ -342,9 +339,9 @@ all_trips$ride_length <- difftime(all_trips$ended_at,all_trips$started_at)
 all_trips$ride_length <- as.numeric(as.character(all_trips$ride_length))
 is.numeric(all_trips$ride_length)
 TRUE
-Remove bad data
 
-Remove ride length is less than 0 second and is > 1440 minutes as ride length shouldn't be either negative or more than one day
+#Remove ride length is less than 0 second and is > 1440 minutes as ride length shouldn't be either negative or more than one day
+
 # Remove "bad" data
 # The dataframe includes a few hundred entries when bikes were taken out of docks and checked for quality by Divvy or ride_length was negative
 #Create a new data frame without records that have ride length <= zero minute OR > 1440 minutes
@@ -354,6 +351,7 @@ dim(all_trips_v2)
 View(all_trips_v2)
 summary(all_trips_v2)
 #Confirmed the total number of rows is 2,664,700 (down from 3,850,936 - decreased by 30% - significant but necessary removals.
+
 #1,241 NAs Remains in end_lat and end_long
 266470019
 A data.frame: 2664700 × 19
@@ -460,11 +458,12 @@ ride_id	rideable_type	started_at	ended_at	start_station_name	start_station_id	en
                                        3rd Qu.: 934.0  
                                        Max.   :1440.0  
                                                        
-Remove NA data from the all_trips_v2 to get accurate data.
+
 #Drop all NAs
 all_trips_v2 <- drop_na(all_trips_v2)
 dim(all_trips_v2) 
 summary(all_trips_v2)
+
 # Confirmed all the NA is gone.
 256323419
    ride_id          rideable_type       started_at          ended_at        
@@ -508,9 +507,10 @@ all_trips_v3 <- all_trips_v2[!duplicated(all_trips_v2$ride_id),]
 dim(all_trips_v3) 
 # Confirmed 2,563,234 remained (Original data has 3,850,936 >>> Valid)
 256323419
-Data Cleaning/Validation process has been completed at this point.
 
-Next, I am going to create additional columns for further analysis.
+#Data Cleaning/Validation process has been completed at this point.
+
+
 
 #Find out the distance for each ride:
 all_trips_v3$ride_distance <- distGeo(matrix(c(all_trips_v3$start_lng, all_trips_v3$start_lat), ncol = 2), matrix(c(all_trips_v3$end_lng, all_trips_v3$end_lat), ncol = 2))
@@ -616,8 +616,8 @@ summary(all_trips_v3)
                                        3rd Qu.: 937.0   3rd Qu.: 2557.1  
                                        Max.   :1440.0   Max.   :25218.9  
 
-Analyze
-Firstly, calculate the number of rides by type of rider.
+
+#Firstly, calculate the number of rides by type of rider.
 
 #Assign the correct order to each day of the week
 all_trips_v3$day_of_week <- 
@@ -678,11 +678,11 @@ member	03	123872
 casual	04	83778
 member	04	170431
 
-<b>Findings:</b>
+#Findings
 
-Casual riders are more likely to take a ride on weekend while membership riders ride more on the weekday.
-Summer is the peak season for both rider types.
-Now, I would like to find out whether ride_length can be different depending on rider type.
+#Casual riders are more likely to take a ride on weekend while membership riders ride more on the weekday.
+#Summer is the peak season for both rider types.
+#Now, I would like to find out whether ride_length can be different depending on rider type.
 
 aggregate(all_trips_v3$ride_length ~ all_trips_v3$member_casual + all_trips_v3$day_of_week, FUN=mean)
 A data.frame: 14 × 3
@@ -734,11 +734,11 @@ member	03	586.2971
 casual	04	714.3100
 member	04	598.1330
 
-Findings:
+#Findings:
 
-Membership rider's trip is longer than casual ones regardless of the season or day.
-All users take longer trips over weekend and summertime.
-Next, I'll check whether how each type of rider use the bike by looking at ride distance.
+#Membership rider's trip is longer than casual ones regardless of the season or day.
+#All users take longer trips over weekend and summertime.
+#Next, I'll check whether how each type of rider use the bike by looking at ride distance.
 
 all_trips_v3 %>%
     group_by(member_casual, day_of_week) %>%
@@ -794,9 +794,9 @@ casual	04	1805.112
 member	04	1784.267
 Findings:
 
-While Casual rider has slightly longer distance trip on weekday, membership ride's slighly longer over weekend.
-All users take slightly longer distance trip in Spring
-Finaly, in order to support my assumption, let's find out how many riders use the same bike station for start point and end point (ride_distance = 0).
+#While Casual rider has slightly longer distance trip on weekday, membership ride's slighly longer over weekend.
+#All users take slightly longer distance trip in Spring
+#Finaly, in order to support my assumption, let's find out how many riders use the same bike station for start point and end point (ride_distance = 0).
 
 all_trips_v3 %>%
     group_by(member_casual) %>%
@@ -817,10 +817,10 @@ casual	58284
 member	72786
 Finding:
 
-6% of casual riders return their bike to their start point station, 4% of membership rider returns at their start point station.
+#6% of casual riders return their bike to their start point station, 4% of membership rider returns at their start point station.
 
-Share
-Here are visualizations which would allow executives to understand my conclusion easily.
+
+#Here are visualizations which would allow executives to understand my conclusion easily.
 
 all_trips_v3 %>%
     group_by(member_casual, day_of_week) %>%
@@ -868,17 +868,6 @@ all_trips_v3 %>%
     ggplot(aes(x = month, y = average_ride_distance, fill = member_casual)) + 
     geom_bar(position = "dodge", stat = "identity")
 
-
-Analysis
-
-Casual users travel the same average distance than members, but they have relatively longer rides, that would indicate a more leisure oriented usage vs a more "public transport" or pragmatic use of the bikes by the annual members.
-Casual riders are more likely to return their bikes at the same station.
-Additionally, membership riders are more active on weekday, casual riders use the service more often over weekend. It lead me to conclude that membership riders use this service for their commute while casual rider use it for fun.
-
-Conclusion:
-1)The Casual users have leisure, and tourism rides mostly on weekends.
-
-2)The Annual users have commute or pragmatic rides during weekdays.
 
 
 
