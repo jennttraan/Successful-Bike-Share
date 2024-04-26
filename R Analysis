@@ -39,6 +39,7 @@ tripdata_2021_02 <- read.csv("../input/tripsdata-202005202104/202102-divvy-tripd
 tripdata_2021_03 <- read.csv("../input/tripsdata-202005202104/202103-divvy-tripdata.csv")
 tripdata_2021_04 <- read.csv("../input/tripsdata-202005202104/202104-divvy-tripdata.csv")
 
+
 #DATA CHECK 
 colnames(tripdata_2020_05)
 colnames(tripdata_2020_06)
