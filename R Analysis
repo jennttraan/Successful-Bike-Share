@@ -40,7 +40,7 @@ tripdata_2021_03 <- read.csv("../input/tripsdata-202005202104/202103-divvy-tripd
 tripdata_2021_04 <- read.csv("../input/tripsdata-202005202104/202104-divvy-tripdata.csv")
 
 
-#DATA CHECK 
+# DATA CHECK 
 colnames(tripdata_2020_05)
 colnames(tripdata_2020_06)
 colnames(tripdata_2020_07)
@@ -67,8 +67,8 @@ colnames(tripdata_2021_04)
 'ride_id''rideable_type''started_at''ended_at''start_station_name''start_station_id''end_station_name''end_station_id''start_lat''start_lng''end_lat''end_lng''member_casual'
 'ride_id''rideable_type''started_at''ended_at''start_station_name''start_station_id''end_station_name''end_station_id''start_lat''start_lng''end_lat''end_lng''member_casual'
 'ride_id''rideable_type''started_at''ended_at''start_station_name''start_station_id''end_station_name''end_station_id''start_lat''start_lng''end_lat''end_lng''member_casual'
-#
-DATA CHECK 
+
+# DATA CHECK 
 str(tripdata_2020_05)
 str(tripdata_2020_06)
 str(tripdata_2020_07)
