@@ -24,6 +24,7 @@ The following objects are masked from ‘package:base’:
 
 
 library(geosphere)
+
 # Read the trip data from 202005 - 202104 (12 months)
 tripdata_2020_05 <- read.csv("../input/tripsdata-202005202104/202005-divvy-tripdata.csv")
 tripdata_2020_06 <- read.csv("../input/tripsdata-202005202104/202006-divvy-tripdata.csv")
@@ -37,6 +38,7 @@ tripdata_2021_01 <- read.csv("../input/tripsdata-202005202104/202101-divvy-tripd
 tripdata_2021_02 <- read.csv("../input/tripsdata-202005202104/202102-divvy-tripdata.csv")
 tripdata_2021_03 <- read.csv("../input/tripsdata-202005202104/202103-divvy-tripdata.csv")
 tripdata_2021_04 <- read.csv("../input/tripsdata-202005202104/202104-divvy-tripdata.csv")
+
 #DATA CHECK 
 colnames(tripdata_2020_05)
 colnames(tripdata_2020_06)
@@ -50,7 +52,8 @@ colnames(tripdata_2021_01)
 colnames(tripdata_2021_02)
 colnames(tripdata_2021_03)
 colnames(tripdata_2021_04)
-# Confirmed none of column name should be changed
+
+# Confirmed none of column names should be changed
 'ride_id''rideable_type''started_at''ended_at''start_station_name''start_station_id''end_station_name''end_station_id''start_lat''start_lng''end_lat''end_lng''member_casual'
 'ride_id''rideable_type''started_at''ended_at''start_station_name''start_station_id''end_station_name''end_station_id''start_lat''start_lng''end_lat''end_lng''member_casual'
 'ride_id''rideable_type''started_at''ended_at''start_station_name''start_station_id''end_station_name''end_station_id''start_lat''start_lng''end_lat''end_lng''member_casual'
@@ -63,7 +66,8 @@ colnames(tripdata_2021_04)
 'ride_id''rideable_type''started_at''ended_at''start_station_name''start_station_id''end_station_name''end_station_id''start_lat''start_lng''end_lat''end_lng''member_casual'
 'ride_id''rideable_type''started_at''ended_at''start_station_name''start_station_id''end_station_name''end_station_id''start_lat''start_lng''end_lat''end_lng''member_casual'
 'ride_id''rideable_type''started_at''ended_at''start_station_name''start_station_id''end_station_name''end_station_id''start_lat''start_lng''end_lat''end_lng''member_casual'
-#DATA CHECK 
+#
+DATA CHECK 
 str(tripdata_2020_05)
 str(tripdata_2020_06)
 str(tripdata_2020_07)
@@ -76,6 +80,7 @@ str(tripdata_2021_01)
 str(tripdata_2021_02)
 str(tripdata_2021_03)
 str(tripdata_2021_04)
+
 # Confirmed
 'data.frame':	200274 obs. of  13 variables:
  $ ride_id           : chr  "02668AD35674B983" "7A50CCAF1EDDB28F" "2FFCDFDB91FE9A52" "58991CF1DB75BA84" ...
@@ -245,6 +250,7 @@ str(tripdata_2021_04)
  $ end_lat           : num  41.9 41.8 41.7 41.9 41.7 ...
  $ end_lng           : num  -87.7 -87.6 -87.7 -87.7 -87.7 ...
  $ member_casual     : chr  "member" "casual" "casual" "member" ...
+
 #Covert some data types (from Double to Character) to merge
 tripdata_2020_05 <-  mutate(tripdata_2020_05, start_station_id = as.character(start_station_id), end_station_id = as.character(end_station_id))
 tripdata_2020_06 <-  mutate(tripdata_2020_06, start_station_id = as.character(start_station_id), end_station_id = as.character(end_station_id))
@@ -253,17 +259,24 @@ tripdata_2020_08 <-  mutate(tripdata_2020_08, start_station_id = as.character(st
 tripdata_2020_09 <-  mutate(tripdata_2020_09, start_station_id = as.character(start_station_id), end_station_id = as.character(end_station_id))
 tripdata_2020_10 <-  mutate(tripdata_2020_10, start_station_id = as.character(start_station_id), end_station_id = as.character(end_station_id))
 tripdata_2020_11 <-  mutate(tripdata_2020_11, start_station_id = as.character(start_station_id), end_station_id = as.character(end_station_id))
+
 #Combine all the data sets
 all_trips <- bind_rows(tripdata_2020_05, tripdata_2020_06, tripdata_2020_07, tripdata_2020_08, tripdata_2020_09, tripdata_2020_10, tripdata_2020_11, tripdata_2020_12, tripdata_2021_01, tripdata_2021_02, tripdata_2021_03, tripdata_2021_04)
 
-
-colnames(all_trips)  #List of column names
+#List of column names
+colnames(all_trips)  
 'ride_id''rideable_type''started_at''ended_at''start_station_name''start_station_id''end_station_name''end_station_id''start_lat''start_lng''end_lat''end_lng''member_casual'
-nrow(all_trips)  #How many rows are in data frame?
+
+#How many rows are in data frame?
+nrow(all_trips)  
 3742202
-dim(all_trips)  #Dimensions of the data frame?
+
+#Dimensions of the data frame?
+dim(all_trips)  
 374220213
-head(all_trips)  #See the first 6 rows of data frame.
+
+#See the first 6 rows of data frame.
+head(all_trips)  
 A data.frame: 6 × 13
 ride_id	rideable_type	started_at	ended_at	start_station_name	start_station_id	end_station_name	end_station_id	start_lat	start_lng	end_lat	end_lng	member_casual
 <chr>	<chr>	<chr>	<chr>	<chr>	<chr>	<chr>	<chr>	<dbl>	<dbl>	<dbl>	<dbl>	<chr>
@@ -273,7 +286,10 @@ ride_id	rideable_type	started_at	ended_at	start_station_name	start_station_id	en
 4	58991CF1DB75BA84	docked_bike	2020-05-02 16:25:36	2020-05-02 16:39:28	Clarendon Ave & Leland Ave	251	Lake Shore Dr & Wellington Ave	157	41.9680	-87.6500	41.9367	-87.6368	casual
 5	A79651EFECC268CD	docked_bike	2020-05-29 12:49:54	2020-05-29 13:27:11	Hermitage Ave & Polk St   	261	Halsted St & Archer Ave       	206	41.8715	-87.6699	41.8472	-87.6468	member
 6	1466C5B39F68F746	docked_bike	2020-05-29 13:27:24	2020-05-29 14:14:45	Halsted St & Archer Ave   	206	May St & Taylor St            	22	41.8472	-87.6468	41.8695	-87.6555	member
-str(all_trips)  #See list of columns and data types (numeric, character, etc)
+
+#See list of columns and data types (numeric, character, etc)
+str(all_trips)
+
 # You can also confirm each columns' data type here
 'data.frame':	3742202 obs. of  13 variables:
  $ ride_id           : chr  "02668AD35674B983" "7A50CCAF1EDDB28F" "2FFCDFDB91FE9A52" "58991CF1DB75BA84" ...
@@ -333,7 +349,6 @@ all_trips$day_of_week <- format(as.Date(all_trips$date), "%A")
 colnames(all_trips)
 'ride_id''rideable_type''started_at''ended_at''start_station_name''start_station_id''end_station_name''end_station_id''start_lat''start_lng''end_lat''end_lng''member_casual''date''month''day''year''day_of_week'
 # Add a "ride_length" calculation to all_trips (in seconds) so that I can compare ride length for each ride
-# https://stat.ethz.ch/R-manual/R-devel/library/base/html/difftime.html
 all_trips$ride_length <- difftime(all_trips$ended_at,all_trips$started_at)
 # Convert "ride_length" from Double to numeric so we can run calculations on the data
 all_trips$ride_length <- as.numeric(as.character(all_trips$ride_length))
@@ -350,8 +365,8 @@ all_trips_v2 <- all_trips[!(all_trips$ride_length <= 0 | all_trips$ride_length >
 dim(all_trips_v2) 
 View(all_trips_v2)
 summary(all_trips_v2)
-#Confirmed the total number of rows is 2,664,700 (down from 3,850,936 - decreased by 30% - significant but necessary removals.
 
+#Confirmed the total number of rows is 2,664,700 (down from 3,850,936 - decreased by 30% - significant but necessary removals.
 #1,241 NAs Remains in end_lat and end_long
 266470019
 A data.frame: 2664700 × 19
