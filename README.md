@@ -1,6 +1,9 @@
 
 # How Does A Bike Share Navigate Success?
+<br>
+![Untitled design](https://github.com/jennttraan/Successful-Bike-Share/assets/144400508/d156e2d8-89a3-4de4-91e5-81ea6a27478f)
 
+<br>
 ### Background scenario
 
 I am a junior data analyst working in the marketing analyst team at Cyclistic, a bike-share company in Chicago. The director of marketing believes the company’s future success depends on maximizing the number of annual memberships. Therefore, my team wants to understand how casual riders and annual members use Cyclistic bikes differently. From these insights, my team will design a new marketing strategy to convert casual riders into annual members.
