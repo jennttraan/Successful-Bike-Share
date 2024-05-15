@@ -1,7 +1,7 @@
 
 # How Does A Bike Share Navigate Success?
 <br>
-![Untitled design](https://github.com/jennttraan/Successful-Bike-Share/assets/144400508/d156e2d8-89a3-4de4-91e5-81ea6a27478f)
+![Untitled design](https://github.com/jennttraan/Successful-Bike-Share/assets/144400508/d156e2d8-89a3-4de4-91e5-81ea6a27478f)!
 
 <br>
 ### Background scenario
