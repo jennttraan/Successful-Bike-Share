@@ -34,10 +34,24 @@ Three questions will guide the future marketing program:
 
 ### Business Task
 
-In order to maximize the number of annual membership, I,the data analyst, will find trends and patterns among casual riders and membership riders, and identify potential riders who benefit from annual membership.
+In order to maximize the number of annual membership, I, the data analyst, will find trends and patterns among casual riders and membership riders, and identify potential riders who benefit from annual membership.
 
 ### About The Data Set
 
-Since Cyclistic is a fictional company, I will use Divvy’s, a bike-share program based in Chicago, data from May 2020 – April 2021 to complete this case study. For the dataset plase click <a href="http://divvy-tripdata.s3.amazonaws.com/index.html">here</a>
+Since Cyclistic is a fictional company, I will use Divvy’s, a bike-share program based in Chicago, data from May 2020 – April 2021 to complete this case study. For the dataset please click <a href="http://divvy-tripdata.s3.amazonaws.com/index.html">here</a>.
 
-### Processing The Data
+### Processing The Data And Analyzing The Data
+
+Complete R analysis can be found <a href="https://github.com/jennttraan/How-does-a-bike-share-navigate-success-/blob/main/R%20Analysis">here</a> and <a href="https://github.com/jennttraan/How-does-a-bike-share-navigate-success-/blob/main/R%20Cleaning">here</a>.
+I calculated ride durations based on start and end times. Filtered out excessively long or short rides. Ensured data accuracy and reliability. Summarized statistics for ride length.I also broke down the customer types (annual members vs. casual riders). Calculated total rides and ride durations by customer type. Determined ride length patterns by day of the week and month. Found differences in ride behavior between customer types.
+
+### In Conclusion
+
+<b>Based on the analysis, the following recommendations are made:</b>
+
+Increase marketing efforts targeting leisure riders on weekends and in the summer.
+Encourage annual members to use bikes more regularly throughout the week.
+Evaluate the popularity of docked bikes and consider improvements.
+Focus on improving classic bike fleet.
+Consider offering longer rental periods for casual riders.
+Increase marketing efforts during winter months.
