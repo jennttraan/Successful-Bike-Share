@@ -13,25 +13,23 @@ In 2016, Cyclistic launched a successful bike-share company. Since then, the pro
 
 Three questions will guide the future marketing program:
 
-How do annual members and casual riders use Cyclistic bikes differently?
+1. How do annual members and casual riders use Cyclistic bikes differently?
 
-Why would casual riders buy Cyclistic annual memberships?
+2. Why would casual riders buy Cyclistic annual memberships?
 
-How can Cyclistic use digital media to influence casual riders to become members?
-
-The director of marketing has assigned me the first question to answer: How do annual members and casual riders use Cyclistic bikes differently?
+3. How can Cyclistic use digital media to influence casual riders to become members?
 
 <b>In this assignment, I will produce a report with the following deliverables:</b>
 
-A clear statement of the business task
+1.  clear statement of the business task
 
-A description of all data sources used
+2. A description of all data sources used
 
-Documentation of any cleaning or manipulation of data
+3. Documentation of any cleaning or manipulation of data
 
-A summary of my analysis
+4. A summary of my analysis
 
-Supporting visualizations and key findings
+5. Supporting visualizations and key findings
 
 
 <b>Business Task </b>
