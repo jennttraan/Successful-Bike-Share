@@ -32,10 +32,12 @@ Three questions will guide the future marketing program:
 5. Supporting visualizations and key findings
 
 
-<b>Business Task </b>
+### Business Task
 
 In order to maximize the number of annual membership, I,the data analyst, will find trends and patterns among casual riders and membership riders, and identify potential riders who benefit from annual membership.
 
-<b>About the data set:</b>
+### About The Data Set
 
-Since Cyclistic is a fictional company, I will use Divvy’s, a bike-share program based in Chicago, data from May 2020 – April 2021 to complete this case study. For the dataset plase click <a href="http://divvy-tripdata.s3.amazonaws.com/index.html">here</a>.
+Since Cyclistic is a fictional company, I will use Divvy’s, a bike-share program based in Chicago, data from May 2020 – April 2021 to complete this case study. For the dataset plase click <a href="http://divvy-tripdata.s3.amazonaws.com/index.html">here</a>
+
+### Processing The Data
