@@ -43,6 +43,7 @@ Since Cyclistic is a fictional company, I will use Divvy’s, a bike-share progr
 ## Processing And Analyzing The Data
 
 Complete R analysis can be found <a href="https://github.com/jennttraan/How-does-a-bike-share-navigate-success-/blob/main/R%20Analysis">here</a> and <a href="https://github.com/jennttraan/How-does-a-bike-share-navigate-success-/blob/main/R%20Cleaning">here</a>.
+<br>
 I calculated ride durations based on start and end times. Filtered out excessively long or short rides. Ensured data accuracy and reliability. Summarized statistics for ride length.I also broke down the customer types (annual members vs. casual riders). Calculated total rides and ride durations by customer type. Determined ride length patterns by day of the week and month. Found differences in ride behavior between customer types.
 
 ## Visualizations
