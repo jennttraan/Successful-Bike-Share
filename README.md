@@ -37,7 +37,7 @@ Three questions will guide the future marketing program:
 
 ### Business Task
 
-In order to maximize the number of annual membership, I, the data analyst, will find trends and patterns among casual riders and membership riders, and identify potential riders who benefit from annual membership.
+In order to maximize the number of annual membership, I will find trends and patterns among casual riders and membership riders, and identify potential riders who benefit from annual membership.
 
 ### About The Data Set
 
