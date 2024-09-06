@@ -75,9 +75,9 @@ Generally, the most popular months are during the Spring and Summer. The weather
 
 <b>Based on the analysis, the following recommendations are made:</b>
 
-Increase marketing efforts targeting leisure riders on weekends and in the summer.
-Encourage annual members to use bikes more regularly throughout the week.
-Evaluate the popularity of docked bikes and consider improvements.
-Focus on improving classic bike fleet.
-Consider offering longer rental periods for casual riders.
-Increase marketing efforts during winter months.
+1. Increase marketing efforts targeting leisure riders on weekends and in the summer.
+2. Encourage annual members to use bikes more regularly throughout the week.
+3. Evaluate the popularity of docked bikes and consider improvements.
+4. Focus on improving classic bike fleet.
+5. Consider offering longer rental periods for casual riders.
+6. Increase marketing efforts during winter months.
